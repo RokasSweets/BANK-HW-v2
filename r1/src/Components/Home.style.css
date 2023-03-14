@@ -1,0 +1,135 @@
+.article-header {
+    border-radius: 15px;
+    background-color: #ae8ca3;
+    color: white;
+    border: 3px solid transparent;
+    text-align: center;
+}
+.section-content {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 15px;
+}
+.statistics {
+    display: flex;
+    justify-content: end;
+    margin: 5px;
+}
+.header-center {
+    display: flex;
+    justify-content: center;
+}
+.client-number {
+    padding-right: 10px;
+}
+.add-user-btn {
+    background: #32213a;
+    border-radius: 999px;
+    box-shadow: #32213a 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji",
+        NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
+        EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto,
+        "Helvetica Neue", "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+    float: right;
+}
+.filter-btn {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember", sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    margin: 0 7px;
+}
+
+.filter-btn:hover {
+    background-color: #f7fafa;
+}
+
+.filter-btn:focus {
+    border-color: #008296;
+    box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+    outline: 0;
+}
+.balance-update-btn,
+.actions-btn {
+    background-color: #383b53;
+    border-radius: 3px;
+    border: 1px solid #32213a;
+    box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #f7fafa;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+        sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.15385;
+    outline: none;
+    padding: 8px 0.8em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+    margin: 0 7px;
+}
+.actions-btn:disabled,
+.actions-btn[disabled]:hover,
+.actions-btn[disabled]:focus {
+    background-color: crimson;
+}
+
+.balance-update-btn:hover,
+.balance-update-btn:focus,
+.actions-btn:hover,
+.-btn:focus {
+    background-color: #ae8ca3;
+    color: #f7fafa;
+}
+
+.balance-update-btn:focus,
+.actions-btn:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+
+.balance-update-btn:active .actions-btn:active {
+    background-color: #ae8ca3;
+    box-shadow: none;
+    color: #f7fafa;
+}
+
+.actions-btn {
+    margin: 0 7px;
+}
