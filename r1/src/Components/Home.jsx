@@ -44,14 +44,14 @@ const Home = () => {
             <article className="article-header">
                 <header>
                     <div className="header-center">
-                        <h1>React Bank</h1>
+                        <h1>HW Bank U2</h1>
                     </div>
                     <div className="statistics">
                         <div className="client-number">
-                            Number of clients: {userList.length}
+                            We have {userList.length} clients!
                         </div>
                         <div>
-                            Total amount of funds:{" "}
+                            We are holding{" "}
                             {calculateTotalFunds(userList).toFixed(2)} €
                         </div>
                     </div>
@@ -62,7 +62,7 @@ const Home = () => {
                     <>
                         <input
                             type="button"
-                            value="Add User"
+                            value="New client"
                             onClick={addUserClickHandler}
                             className="add-user-btn"
                         />

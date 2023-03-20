@@ -18,14 +18,17 @@ const FilterUsers = ({ userList, setFilteredUsers }) => {
     };
     return (
         <div>
-            <button className="filter-btn" onClick={filterWithBalance}>
-                Active Users
-            </button>
+            <p className="filter-btn-text">Filter by:</p>
             <button className="filter-btn" onClick={filterWithNoBalance}>
-                Inactive Users
+                Zero balance
             </button>
+            <p className="filter-btn-text">,</p>
+            <button className="filter-btn" onClick={filterWithBalance}>
+                Positive balance
+            </button>
+            <p className="filter-btn-text">or</p>
             <button className="filter-btn" onClick={clearFilter}>
-                All Users
+                Show all clients
             </button>
         </div>
     );

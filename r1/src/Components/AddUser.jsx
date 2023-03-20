@@ -34,29 +34,30 @@ const AddUser = ({ onBack, onAddUser }) => {
     return (
         <div className="form-container">
             <div>
-                <h3>Add User Form</h3>
+                <h3>New Client Form</h3>
             </div>
             <form onSubmit={onSubmit}>
                 <div>
-                    <label>First Name:</label>
                     <input
                         type="text"
+                        placeholder="Enter Your first name"
                         value={firstName}
                         onChange={onFirstNameChangeHandler}
                     ></input>
                 </div>
                 <div>
-                    <label>Last Name:</label>
                     <input
                         type="text"
+                        placeholder="Enter Your last name"
                         value={lastName}
                         onChange={onLastNameChangeHandler}
                     ></input>
                 </div>
                 <div>
-                    <input type="button" value="Back" onClick={onBack}></input>
+                    <input type="button" value="Back" className="adduser-btn" onClick={onBack}></input>
                     <input
                         disabled={firstName.length < 2 || lastName.length < 2}
+                        className="adduser-btn"
                         type="submit"
                         value="Add User"
                     ></input>

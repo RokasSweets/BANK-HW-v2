@@ -3,4 +3,7 @@
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
+    background-color: lightcyan;
+    min-height: 400px;
+    border-radius: 20px;
 }

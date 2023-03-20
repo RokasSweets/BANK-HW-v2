@@ -57,7 +57,7 @@ const UserList = ({ list, onDelete, setRefresh }) => {
     return (
         <div>
             <article>
-                <h3 className="list-header">Bank users list</h3>
+                <h3 className="list-header">Client list</h3>
             </article>
             <table>
                 <thead>
@@ -65,7 +65,7 @@ const UserList = ({ list, onDelete, setRefresh }) => {
                         <th>Name</th>
                         <th>Surname</th>
                         <th>Balance</th>
-                        <th>Funds Update</th>
+                        <th>Transactions</th>
                         <th>User Actions</th>
                     </tr>
                 </thead>
@@ -76,11 +76,23 @@ const UserList = ({ list, onDelete, setRefresh }) => {
                             <tr key={user.id}>
                                 <td>{user.firstName}</td>
                                 <td>{user.lastName}</td>
-                                <td>{user.balance.toFixed(2)}</td>
+                                <td>{user.balance.toFixed(2)}€</td>
                                 <td>
+                                    <button
+                                        className="balance-update-btn btn-primary"
+                                        onClick={() =>
+                                            handleAddBalance(
+                                                user.id,
+                                                balanceUpdates[user.id]
+                                            )
+                                        }
+                                    >
+                                        Deposit
+                                    </button>
                                     <input
                                         type="number"
                                         value={balanceUpdates[user.id] || ""}
+                                        placeholder="Enter € amount"
                                         onChange={(e) =>
                                             handleInputChange(
                                                 user.id,
@@ -91,40 +103,22 @@ const UserList = ({ list, onDelete, setRefresh }) => {
                                     <button
                                         className="balance-update-btn"
                                         onClick={() =>
-                                            handleAddBalance(
-                                                user.id,
-                                                balanceUpdates[user.id]
-                                            )
-                                        }
-                                    >
-                                        Add
-                                    </button>
-                                    <button
-                                        className="balance-update-btn"
-                                        onClick={() =>
                                             handleRemoveBalance(
                                                 user.id,
                                                 balanceUpdates[user.id]
                                             )
                                         }
                                     >
-                                        Remove
+                                        Withdraw
                                     </button>
                                 </td>
                                 <td>
                                     <div>
                                         <input
                                             className="actions-btn"
-                                            type="button"
-                                            value="View"
-                                            onClick={() => viewUser(user)}
-                                        />
-
-                                        <input
-                                            className="actions-btn"
                                             disabled={user.balance > 0}
                                             type="button"
-                                            value="Delete"
+                                            value="Delete user"
                                             onClick={() => onDelete(user.id)}
                                         />
                                     </div>
