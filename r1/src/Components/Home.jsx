@@ -45,7 +45,7 @@ const Home = () => {
             <article className="article-header">
                 <header>
                     <div className="header-center">
-                        <h1>HW Bank U2</h1>
+                        <h1>HW Bank U3</h1>
                     </div>
                     <div className="statistics">
                         <div className="client-number">

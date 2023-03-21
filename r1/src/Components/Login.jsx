@@ -54,7 +54,7 @@ function Login() {
                 </div>
                 <div className="login">
                     <label>Password</label>
-                    <input type="password" value={psw} onChange={e => setPsw(e.target.value)} />
+                    <input type="password" style={{height: '18px'}} value={psw} onChange={e => setPsw(e.target.value)} />
                 </div>
                 <button className="balance-update-btn" style={{margin: '15px'}} onClick={login}>Login</button>
             </div>

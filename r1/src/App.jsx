@@ -9,13 +9,11 @@ import Routes from "./Components/Routes";
 function App() {
     return (
 
-        <GlobalProvider>
+    <GlobalProvider>
 
-    <Nav />
+        <Nav />
 
-    <Routes />
-
-
+        <Routes />
 
     </GlobalProvider>
 
