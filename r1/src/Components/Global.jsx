@@ -3,7 +3,7 @@ import { createContext, useState, useEffect } from 'react';
 export const Global = createContext();
 
 const GlobalProvider = ({ children }) => {
-  const [route, setRoute] = useState('accounts');
+  const [route, setRoute] = useState('home');
   const [logged, setLogged] = useState(null);
   const [authName, setAuthName] = useState(null);
   const [accounts, setAccount] = useState([]);
@@ -36,7 +36,7 @@ const GlobalProvider = ({ children }) => {
   }, []);
 
   // Server URL
-  const url = 'http://localhost:3003/accounts';
+  const url = 'http://localhost:3003/users';
 
   //GET
 

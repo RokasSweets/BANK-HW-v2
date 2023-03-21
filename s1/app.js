@@ -48,10 +48,26 @@ app.post('/login', (req, res) => {
         user.session = sessionId;
         fs.writeFileSync('./data/logininfo.json', JSON.stringify(userslogin), 'utf8');
         res.cookie('logincookiesession', sessionId);
-        res.json({status: 'ok', name: user.name});
+        res.json({status: 'ok', name: user.username});
     } else {
         res.json({status: 'error'});
     }
+
+})
+
+app.get('/login', (req, res) => {
+    const userslogin = JSON.parse(fs.readFileSync("./data/logininfo.json", "utf8"));
+    const user = req.cookies.logincookiesession ? userslogin.find(u => u.session === req.cookies.logincookiesession) : null;
+    
+    if(user) {
+        res.json({
+            status: 'ok',
+            name: user.username
+        });
+    } else {
+        res.json({status: 'error'});
+    }
+    
 
 })
 

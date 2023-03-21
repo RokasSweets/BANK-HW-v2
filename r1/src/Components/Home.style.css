@@ -155,9 +155,35 @@
     margin: 0 7px;
 }
 
-.form-label > input {
-    width: 200px;
-    margin: 10px;
-    padding: 10px;
+.login {
+    align-items: center;
+    align-content: center;
+    margin: 5px;
+    padding: 5px;
     border-radius: 10px;
+}
+
+.login > label {
+    color: lightseagreen;
+    padding-right: 20px;
+}
+
+h4 {
+    color: lightseagreen;
+}
+
+.nav > a {
+    font-size: 20px;
+    margin: 10px;
+    text-decoration: none;
+    color: lightseagreen;
+    border: 2px solid lightseagreen;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.nav > a:hover {
+    color: #ae8ca3;
+    border: 2px solid #ae8ca3;
+    cursor: pointer;
 }
