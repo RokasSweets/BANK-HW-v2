@@ -6,6 +6,7 @@ import AddUser from "./AddUser";
 import calculateTotalFunds from "../functions/calculateTotalFunds";
 import FilterUsers from "./FilterUsers";
 import userService from "../Services/userService";
+import Login from "./Login";
 const Home = () => {
     const [userList, setUserList] = useState(dummyUserList);
     const [filteredUsers, setFilteredUsers] = useState([]);
@@ -82,7 +83,7 @@ const Home = () => {
                 )}
             </section>
         </>
-    );
-};
+    )
+}
 
 export default Home;

@@ -154,3 +154,10 @@
 .actions-btn {
     margin: 0 7px;
 }
+
+.form-label > input {
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}

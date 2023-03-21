@@ -1,12 +1,30 @@
 const express = require("express");
 const cors = require("cors");
+const cookieParser = require('cookie-parser');
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 
 const app = express();
 const port = 3003;
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+}));
+
+app.use(cookieParser());
+
+app.post('/cookie', (req, res) => {
+
+    if (req.body.delete) {
+        res.cookie('Cookie', '', { maxAge: -3600 });
+    } else {
+        res.cookie('Cookie', req.body.text, { maxAge: 3600 });
+    }
+
+    res.json({ msg: 'OK' });
+});
+
 app.use(
     express.urlencoded({
         extended: true,
@@ -18,6 +36,24 @@ app.get("/users", (req, res) => {
     allData = JSON.parse(allData);
     res.json(allData);
 });
+
+app.post('/login', (req, res) => {
+    const userslogin = JSON.parse(fs.readFileSync("./data/logininfo.json", "utf8"));
+    const name = req.body.name;
+    const psw = req.body.psw;
+
+    const user = userslogin.find(u => u.name === name && u.psw === psw);
+    if(user) {
+        const sessionId = uuidv4();
+        user.session = sessionId;
+        fs.writeFileSync('./data/logininfo.json', JSON.stringify(userslogin), 'utf8');
+        res.cookie('logincookiesession', sessionId);
+        res.json({status: 'ok', name: user.name});
+    } else {
+        res.json({status: 'error'});
+    }
+
+})
 
 app.post("/users", (req, res) => {
     let allData = fs.readFileSync("./data/users.json", "utf8");
