@@ -71,6 +71,12 @@ app.get('/login', (req, res) => {
 
 })
 
+app.post('/logout', (req, res) => {
+    res.cookie('logincookiesession', '', { maxAge: -3600});
+    res.json({ status: 'ok',});
+
+})
+
 app.post("/users", (req, res) => {
     let allData = fs.readFileSync("./data/users.json", "utf8");
     allData = JSON.parse(allData);

@@ -45,7 +45,7 @@ function Login() {
             <div>
                 <h4>
                 {
-                    username ? <span>Hello, {username}</span> : <span>Hello, guest</span>
+                    username ? <span>Hello, {username}!</span> : <span>Hello, monke!</span>
                 }
                 </h4>
                 <div className="login">

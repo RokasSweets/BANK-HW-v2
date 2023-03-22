@@ -3,7 +3,7 @@ import { createContext, useState, useEffect } from 'react';
 export const Global = createContext();
 
 const GlobalProvider = ({ children }) => {
-  const [route, setRoute] = useState('home');
+  const [route, setRoute] = useState('homepage');
   const [logged, setLogged] = useState(null);
   const [authName, setAuthName] = useState(null);
   const [accounts, setAccount] = useState([]);
@@ -30,7 +30,7 @@ const GlobalProvider = ({ children }) => {
           setAuthName(data.name);
         } else {
           setLogged(false);
-          setRoute('login');
+          setRoute('homepage');
         }
       });
   }, []);
